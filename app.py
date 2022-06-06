@@ -2,6 +2,7 @@
 from flask import Flask, render_template, send_from_directory, request
 import os
 import webcolors
+from colorname import rgb_name
 from string_random import generate
 from predict import predict_colors
 
@@ -27,9 +28,9 @@ def upload():
             uploaded_file.save(f'static/{name}.jpg')  
             colors = predict_colors(f'static/{name}.jpg')
             colorname = []
-            # for i in colors:
-                # colorname.append(webcolors.hex_to_name(str(i)))
-    return render_template('results.html', name = name, colors = colors, colorname=['red', 'red', 'red', 'red', 'red'])
+            for i in colors:
+                colorname.append(rgb_name(str(i)))
+    return render_template('results.html', name = name, colors = colors, colorname=colorname)
 
 @app.route('/link/<url>')
 def link(url):
