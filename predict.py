@@ -1,11 +1,7 @@
 import joblib
-import pickle
+# from methods import get_colors
 from methods import get_colors
 
-def predict_colors():
-    model = joblib.load('static/model.pkl')
-    print('lol')
-    return model('static/flag.jpg')
-    # print(f'lmao {a}')
+def predict_colors(file_name):
+    return get_colors(file_name)
     
-print(predict_colors())

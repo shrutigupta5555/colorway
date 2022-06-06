@@ -8,7 +8,6 @@ def rgb_to_hex(rgb):
 
 
 class Point:
-  
   def __init__(self, coordinates):
     self.coordinates = coordinates
 
@@ -101,16 +100,3 @@ def get_points(image_path):
 
 
 
-
-def get_points(image_path):  
-  img = Image.open(image_path)
-  img.thumbnail((200, 400))
-  img = img.convert("RGB")
-  w, h = img.size
-  
-  points = []
-  for count, color in img.getcolors(w * h):
-    for _ in range(count):
-      points.append(Point(color))
-    
-  return points
