@@ -125,7 +125,7 @@ input[type="submit"]{
 }
 
 .uploaded{
-    max-height: 50vh;
+    max-height: 30vh;
     max-width: 30vw;
 }
 
@@ -185,7 +185,7 @@ justify-content: space-between;
     background-color: white;
     height: 70vh;
     width: 70vw;
-    padding: 2rem;
+    padding: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 1rem;
 }
