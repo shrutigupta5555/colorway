@@ -6,17 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/index.css">
     <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Colorway</title>
 </head>
 <body style="color: black;">
+  <style>
+    
+  </style>
+  <script>
+    function getBase64Image(img) {
+var canvas = document.createElement("canvas");
+canvas.width = img.naturalWidth;
+canvas.height = img.naturalHeight;
+
+var ctx = canvas.getContext("2d");
+ctx.drawImage(img, 0, 0);
+
+var dataURL = canvas.toDataURL("image/png");
+
+return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+function readURL(input) {
+   if (input.files && input.files[0]) {
+   var reader = new FileReader();
+
+   reader.onload = function (e) {
+     $('#preview').attr('src', e.target.result);
+
+     bannerImage = document.getElementById('preview');
+     bannerImage.addEventListener("load", e => {
+
+     imgData = getBase64Image(bannerImage);
+     localStorage.setItem("imgData", imgData);
+     })
+     
+   };
+
+   reader.readAsDataURL(input.files[0]);
+   // console.log(reader)
+}
+}
+</script>
     <nav>
         <div class="nav-container">
-            <!-- <img src="../static/assets/logo.png" alt="logo" /> -->
-            <h6>cloudees</h6>
+            <img src="../static/logo.png" alt="logo" height="40rem" />
+            <h6>colorway</h6>
         </div>
         <div class="nav-container">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
+            <a href="https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness#:~:text=If%20you%20have%20color%20blindness,and%20contact%20lenses%20can%20help." target="_blank">Awareness</a>
+            <a href="https://github.com/aakzsh/colorway/blob/main/README.md" target="_blank">Why this?</a>
         </div>
     </nav>
    <center>
@@ -45,39 +84,6 @@
 
    </center>
 
-   <script>
-         function getBase64Image(img) {
-    var canvas = document.createElement("canvas");
-    canvas.width = img.naturalWidth;
-    canvas.height = img.naturalHeight;
-
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
-
-    var dataURL = canvas.toDataURL("image/png");
    
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-}
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-          $('#preview').attr('src', e.target.result);
-
-          bannerImage = document.getElementById('preview');
-          bannerImage.addEventListener("load", e => {
-
-          imgData = getBase64Image(bannerImage);
-          localStorage.setItem("imgData", imgData);
-          })
-          
-        };
-
-        reader.readAsDataURL(input.files[0]);
-        // console.log(reader)
-    }
-    }
-   </script>
 </body>
 </html>
