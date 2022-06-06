@@ -26,8 +26,9 @@ def upload():
         if uploaded_file.filename != '':
             name = generate()
             # name = "hehe"
-            uploaded_file.save(f'static/{name}.jpg')
-            image = get_image(f'static/{name}.jpg')
+            # uploaded_file.save(f'static/{name}.jpg')
+            # image = get_image(f'static/{name}.jpg')
+            image = uploaded_file
             height, width = image.shape[:2]
             print(height, width)
             h = height/400
