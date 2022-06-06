@@ -4,7 +4,7 @@ import os
 from colorname import rgb_name
 from string_random import generate
 from predict import predict_colors
-import cv2
+from cv2 import resize, imwrite
 from resize import get_image
 
 app = Flask(__name__)
@@ -33,8 +33,8 @@ def upload():
             print(height, width)
             h = height/400
             w = width/h
-            image = cv2.resize(image, (int(w), int(400)))  
-            cv2.imwrite(f'static/{name}2.jpg', image)
+            image = resize(image, (int(w), int(400)))  
+            imwrite(f'static/{name}2.jpg', image)
             colors = predict_colors(f'static/{name}2.jpg')
             colorname = []
             for i in colors:
