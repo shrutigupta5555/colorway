@@ -6,6 +6,113 @@ body, html{
     font-family: 'Roboto';
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6f6f6;
+
+    padding: 0.75rem 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav h6, nav a {
+    margin: 0.5rem 2rem;
+    font-size: 1rem;
+    font-weight: 400;
+    
+}
+
+nav h6 {
+    font-size: large;
+    font-weight: bold;
+    
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    
+}
+
+/* 
+=====
+upload
+=====
+*/
+
+.upload {
+    margin-top: 3rem;
+
+}
+
+.preview-container {
+    width: 60%;
+    height: 60vh;
+    background-color: #d8d5d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#preview {
+    width: 50%;
+    height: 80%;
+    object-fit: contain;
+    text-align: center;
+   
+}
+
+
+
+.btn-container {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.custom-file-upload {
+    
+    display: inline-block;
+    background-color: #d8d5d5;
+    border: none;
+    padding: 0.5rem 2rem;
+    color: var(--clr-font);
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+}
+
+.custom-file-upload:hover{
+    opacity: 0.8;
+}
+
+input[type="submit"]{
+    background-color: black;
+    border: none;
+    padding: 0.5rem 2rem;
+    color: white;
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+}
+
+
+ /*
+ ====
+ end
+ ====
+ */
+
 .parent{
     display: flex;
     flex-direction: column;
